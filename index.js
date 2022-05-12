@@ -1,13 +1,10 @@
 const { google } = require('googleapis')
 const { OAuth2 } = google.auth
 
-const oAuth2Client = new OAuth2(
-  'YOUR CLIENT ID GOES HERE',
-  'YOUR CLIENT SECRET GOES HERE'
-)
+const oAuth2Client = new OAuth2()
 
 oAuth2Client.setCredentials({
-  refresh_token: 'YOUR REFRESH TOKEN GOES HERE',
+  refresh_token: 'dasddsa-d-231-d12-d12-d-1d-1d-1-d1',
 })
 
 const calendar = google.calendar({ version: 'v3', auth: oAuth2Client })
