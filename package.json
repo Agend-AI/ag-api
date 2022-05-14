@@ -1,0 +1,18 @@
+{
+  "name": "ag-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Agend-AI/ag-api.git",
+  "author": "Lucas Freitas <lucasdasilvafreitas090@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "scripts": {
+    "start": "nodemon --watch src src/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
+  }
+}
