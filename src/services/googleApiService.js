@@ -44,7 +44,6 @@ const GetEvents = async (dateTimeStart, dateTimeEnd) => {
       calendarId: calendarId,
       timeMin: dateTimeStart,
       timeMax: dateTimeEnd,
-      timeZone: "America/Brazil",
     });
 
     console.log(response);

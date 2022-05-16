@@ -3,9 +3,7 @@ const EventController = require("./Controllers/EventController");
 
 const routes = express.Router();
 
-routes.get("/appointments", (req, res) => {
-  return res.json({ message: "Hello World" });
-});
+routes.get("/events", EventController.GetEvents);
 
 routes.post("/createEvent", EventController.CreateEvent);
 

@@ -19,11 +19,23 @@ module.exports = {
       },
     };
 
-    console.log(event);
-
     var result = await InserEvent(event);
+
     return response.json(result);
   },
-  async GetEvents(request, response) {},
-  async DeleteEvent(request, response) {},
+  async GetEvents(request, response) {
+    const { dateTimeStart, dateTimeEnd } = request.body;
+
+    let dateStart =
+      dateTimeStart == null ? "2022-01-01T00:00:00.000-03:00" : dateTimeStart;
+    let dateEnd =
+      dateTimeEnd == null ? "2022-12-31T21:00:00.000-03:00" : dateTimeEnd;
+
+    let result = await GetEvents(dateStart, dateEnd);
+
+    return response.json(result);
+  },
+  async DeleteEvent(request, response) {
+    
+  },
 };
