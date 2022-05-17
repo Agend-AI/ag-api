@@ -1,11 +1,9 @@
 const { google } = require("googleapis");
 require("dotenv").config();
 
-// Provide the required configuration
 const CREDENTIALS = JSON.parse(process.env.CREDENTIALS);
 const calendarId = process.env.CALENDAR_ID;
 
-// Google calendar API settings
 const SCOPES = "https://www.googleapis.com/auth/calendar";
 const calendar = google.calendar({ version: "v3" });
 
@@ -16,24 +14,23 @@ const auth = new google.auth.JWT(
   SCOPES
 );
 
-const InserEvent = async (event) => {
+const InsertEvent = async (event) => {
   try {
-    let response = await calendar.events.insert({
+    let response = calendar.events.insert({
       auth,
       calendarId,
       resource: event,
     });
 
-    console.log(response);
-
-    if (response["status"] == 200 && response["statusText"] === "OK") {
-      return response;
-    } else {
-      return response;
-    }
+    return (event = {
+      id: response.data.id,
+      summary: response.data.summary,
+      description: response.data.description,
+      start: response.data.start,
+      end: response.data.end,
+    });
   } catch (error) {
-    console.log(`Error at insertEvent --> ${error}`);
-    return error;
+    return "Erro ao criar o evento";
   }
 };
 
@@ -44,11 +41,22 @@ const GetEvents = async (dateTimeStart, dateTimeEnd) => {
       calendarId: calendarId,
       timeMin: dateTimeStart,
       timeMax: dateTimeEnd,
-      timeZone: "America/Brazil",
     });
 
-    console.log(response);
-    let items = response["data"]["items"];
+    let items = [];
+
+    response.data.items.forEach((element) => {
+      const event = {
+        id: element.id,
+        summary: element.summary,
+        description: element.description,
+        start: element.start,
+        end: element.end,
+      };
+
+      items.push(event);
+    });
+
     return items;
   } catch (error) {
     console.log(`Error at getEvents --> ${error}`);
@@ -58,21 +66,55 @@ const GetEvents = async (dateTimeStart, dateTimeEnd) => {
 
 const DeleteEvent = async (eventId) => {
   try {
-    let response = await calendar.events.delete({
+    await calendar.events.delete({
       auth: auth,
       calendarId: calendarId,
       eventId: eventId,
     });
 
-    if (response.data === "") {
-      return 1;
-    } else {
-      return 0;
-    }
+    return "Evento deletado com sucesso";
   } catch (error) {
-    console.log(`Error at deleteEvent --> ${error}`);
-    return 0;
+    return "Erro ao deletar o evento";
   }
 };
 
-module.exports = { InserEvent, GetEvents, DeleteEvent };
+const UpdateEvent = async (
+  eventId,
+  newSummary,
+  newDescription,
+  newDateTimeStart,
+  newDateTimeEnd
+) => {
+  try {
+    const updatedEvent = {
+      id: eventId,
+      summary: newSummary,
+      description: newDescription,
+      start: {
+        dateTime: newDateTimeStart,
+      },
+      end: {
+        dateTime: newDateTimeEnd,
+      },
+    };
+
+    const changedEvent = await calendar.events.update({
+      auth: auth,
+      calendarId: calendarId,
+      eventId: eventId,
+      resource: updatedEvent,
+    });
+
+    return {
+      id: eventId,
+      summary: changedEvent.data.summary,
+      description: changedEvent.data.description,
+      start: changedEvent.data.start,
+      end: changedEvent.data.end,
+    };
+  } catch (error) {
+    return "Erro ao atualizar o evento";
+  }
+};
+
+module.exports = { InsertEvent, GetEvents, DeleteEvent, UpdateEvent };
