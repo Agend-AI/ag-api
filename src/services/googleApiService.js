@@ -80,27 +80,21 @@ const DeleteEvent = async (eventId) => {
 
 const UpdateEvent = async (
   eventId,
-  summary,
-  description,
-  dateTimeStart,
-  dateTimeEnd
+  newSummary,
+  newDescription,
+  newDateTimeStart,
+  newDateTimeEnd
 ) => {
   try {
-    const getEvent = await calendar.events.get({
-      auth: auth,
-      calendarId: calendarId,
-      eventId: eventId,
-    });
-
     const updatedEvent = {
       id: eventId,
-      summary: summary ? summary : getEvent.data.summary,
-      description: description ? description : getEvent.data.description,
+      summary: newSummary,
+      description: newDescription,
       start: {
-        dateTime: dateTimeStart ? dateTimeStart : getEvent.data.start.dateTime,
+        dateTime: newDateTimeStart,
       },
       end: {
-        dateTime: dateTimeEnd ? dateTimeEnd : getEvent.data.end.dateTime,
+        dateTime: newDateTimeEnd,
       },
     };
 
