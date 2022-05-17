@@ -3,16 +3,12 @@ const EventController = require("./Controllers/EventController");
 
 const routes = express.Router();
 
-routes.get("/events", EventController.GetEvents);
+routes.get("/event", EventController.GetEvents);
 
-routes.post("/createEvent", EventController.CreateEvent);
+routes.post("/event", EventController.CreateEvent);
 
-routes.put("/appointment", (req, res) => {
-  return res.json({ message: "Update appointment" });
-});
+routes.put("/event/:id", EventController.UpdateEvent);
 
-routes.delete("/appointments/:id", (req, res) => {
-  return res.json({ message: "Delete appointment" });
-});
+routes.delete("/event/:id", EventController.DeleteEvent);
 
 module.exports = routes;
