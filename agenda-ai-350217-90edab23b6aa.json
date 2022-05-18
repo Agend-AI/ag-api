@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "agenda-ai-350217",
+  "private_key_id": "90edab23b6aabb5bf26e515778edb10c2cc24e6b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCtRHiVaWRItBrp\nkJosJfo08qF+nxeWwXu7N2a46g0so0RL/HecxEyIBC0sjNl26HvxK+RcAhq7KfbZ\n13aYsaUobIfdzSHnMAl1hrUllE8CalGKQbRNWTQozXI51a9znHKDlpZRPDtCZCPZ\nzLkKFF9xK0SwP498k3ChpZPaz+JsJBeszC+uaAUPJuQMjfDegIvVSfu6Ae0TUrou\nSQJErekTTpACJrSqL3RTW3rxaw7AqO81ENaiBSX9nFwJPFmH0BMdY4G5QhlnWkWD\n1q6amwKMk9PoI2BREYKu/x809p8tITZqYgaZ251+ututeLB82w+/4sDm6Yy43hFG\na4mEQzX1AgMBAAECggEAFEx6a1gABCvOyqstV1u8TtoCr8tin5Tw8nN184GUDoqI\nFKDcwH8XejMxuaTnUIYXCHTnGXJeVav/u/Cr97fkIfK+Y26bTggzgNMfGL/Ma9DZ\n1v6F6YPjAkljXEGGVF8xOUJPP5rJ/ygCh+BzPdTk2OTD9M6qzYzru+b320F8hMTv\nrXX5utugz0azAVowA2a8nX5i5so9sQZvX9Jo+hyqAzY92OaI9y2AtZTwaTKIa2EW\n3TGfK0XE94wz/SMTF/xM1idtweLtOF6eiR4kpf7WNCfsbSukWKYvoPE+1AZ2X6mL\nJLfeXRQaGwHe4S1SHraDRXjzXbGS3gm9rtADrm8QxwKBgQDWW3rWZu3iCCOpWjE1\nG9lJwU4qo7efG9yq3Ssh5smsnXYzXCBYB0PVYDsekxlrrjIJlJcCcr6Q3oRpk1GC\n7WJwXFcWKYURgz2+sH/4hb7oB2U97fEWlXm3Yr7JYtv6mkBjC20O7pLQHgrXdFo/\ndYRtKA3YtKbKY0Qhg1W0tr5YxwKBgQDO7X10b9ZwzAYBB1uJnvwl70Xzx6WKwh03\nRQJlyXkGJMIdYapAXxA8KGzmOZlrhqtNvFWP5CJkX/p4jcQyjhE0Wi1kvlWU19oq\nqfLoVeJZRYKAUAHbbOAOJVEWJMula3m1Z1vfHSl/l0rrZdpGA/GznXQhKcQVHAxS\nlSS9wOsXYwKBgFJXi8VGfsTgKYrJibOEAiER74vznfqxwj+kfAgm1nvHdPtfvVDz\nYXxa3frtuMsjfDcv7B5Vo5yUzbqci6hGthTBc/agdmx2xMY2mMIH5oDNLnfuqjjp\nrHrkpLNJlYUbsfYaEoe035Kwp6uCF5Te+MLRqxf+tT9ziF1zTP4BYPdLAoGAdkew\nH19SDzW/9NSU0UyMSs7DiH5FNNSSSKZsoWwRfp6CSrMp0xPDvu9ImCyycpEO2Cdg\nLRi1Q/TMwh4e2Nr2IJuvONfHKYZckWiFjaKR+H9QAjI5bYiFZfCUsfikY1DUyAll\nrVoI/4Kmc3nL05urjATjfZVXHM3kiUvxLXnZp4sCgYAJQxcHd9DUSErTKfIHyaQP\nIbmRSrt3k1UNTjhUxDj1LdSMSC3akOSQRq676D4RjYsuD3+HDSOJxFTbUEkZdPjU\nnWDrbF9LfGU7jDD1WY+WWNuJofp1HqPpFw3NSkB2YTaQcz9vGSiU+uXaqSvSfquO\nqPa0vvjcm4xHAtpUSOIRAw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "testing-google-calendar-api@agenda-ai-350217.iam.gserviceaccount.com",
+  "client_id": "116230477959387101144",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/testing-google-calendar-api%40agenda-ai-350217.iam.gserviceaccount.com"
+}
